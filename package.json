@@ -1,15 +1,6 @@
 {
-  "author": "George Heeres <gheeres@gmail.com>",
-  "name": "activedirectory2",
+  "name": "@common/activedirectory",
   "version": "2.1.0",
-  "description": "ActiveDirectory is an ldapjs client for authN (authentication) and authZ (authorization) for Microsoft Active Directory with range retrieval support for large Active Directory installations.",
-  "contributors": [
-    {
-      "name": "James Sumners",
-      "email": "james.sumners@gmail.com",
-      "url": "http://jrfom.com"
-    }
-  ],
   "main": "index.js",
   "directories": {
     "lib": "./lib"
@@ -21,9 +12,6 @@
     "ldap",
     "active directory"
   ],
-  "bugs": {
-    "url": "https://github.com/jsumners/node-activedirectory/issues"
-  },
   "dependencies": {
     "abstract-logging": "^2.0.0",
     "async": "^3.1.0",
@@ -41,10 +29,6 @@
     "lint",
     "test"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jsumners/node-activedirectory.git"
-  },
   "license": "MIT",
   "devDependencies": {
     "jsdoc": "^3.6.5",
