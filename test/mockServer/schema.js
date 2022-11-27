@@ -169,7 +169,7 @@ function createUserObject (firstName, lastName, initials, username, ou, groups) 
       createTimeStamp: 0,
       sn: lastName,
       givenName: firstName,
-      initials: initials,
+      initials,
       cn: `CN=${firstName} ${lastName},OU=Domain Users,DC=domain,DC=com`,
       distinguishedName: `CN=${firstName} ${lastName},OU=Domain Users,DC=domain,DC=com`,
       displayName: `${firstName} ${lastName}`,

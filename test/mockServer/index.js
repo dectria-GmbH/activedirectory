@@ -50,12 +50,12 @@ function Server (options) {
 
     if (options.certificate || options.key) {
       if (!(options.certificate && options.key) ||
-          (typeof (options.certificate) !== 'string' &&
+        (typeof (options.certificate) !== 'string' &&
           !Buffer.isBuffer(options.certificate)) ||
-          (typeof (options.key) !== 'string' &&
+        (typeof (options.key) !== 'string' &&
           !Buffer.isBuffer(options.key))) {
         throw new TypeError('options.certificate and options.key ' +
-                            '(string or buffer) are both required for TLS')
+          '(string or buffer) are both required for TLS')
       }
     }
   } else {
@@ -109,7 +109,7 @@ function Server (options) {
         let str
         if (!this.server.address().family) {
           str = 'ldapi://'
-          str += this.host.replace(new RegExp('/', 'g'), '%2f')
+          str += this.host.replace(/\//g, '%2f')
           return str
         }
         if (this.server instanceof tls.Server) {
@@ -139,7 +139,7 @@ Server.prototype.bind = function bind (name) {
 
 Server.prototype._getHandlerChain = function _getHandlerChain (req, res) {
   if (req.protocolOp === Protocol.LDAP_REQ_BIND &&
-      req.dn.toString() === 'AnInvalidUsername') {
+    req.dn.toString() === 'AnInvalidUsername') {
     return {
       backend: this,
       handlers: [function (req, res, next) {
@@ -225,7 +225,7 @@ Server.prototype._mount = function (op, name, argv) {
 module.exports = function (cb) {
   const server = new Server({
     strictDN: false,
-    log: log
+    log
   })
 
   authenticationFactory(server, settings)

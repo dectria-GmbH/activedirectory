@@ -53,7 +53,7 @@ module.exports = function getResponse (req) {
       return null
   }
 
-  var res = new Response({
+  const res = new Response({
     messageID: req.messageID,
     log: req.log,
     attributes: ((req instanceof SearchRequest) ? req.attributes : undefined)
